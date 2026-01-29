@@ -1,19 +1,19 @@
-import { About, Blog, Gallery, Home, Newsletter, Person, Social, Work } from "@/types";
+import { About, Blog, Gallery, Home, Newsletter, Person, Social, Work, CV } from "@/types";
 import { Line, Row, Text } from "@once-ui-system/core";
 
 const person: Person = {
-  firstName: "Selene",
-  lastName: "Yu",
-  name: `Selene Yu`,
-  role: "Design Engineer",
+  firstName: "Oscar",
+  lastName: "Garcia",
+  name: `Oscar Garcia`,
+  role: "Développeur web / DevOps Junior",
   avatar: "/images/avatar.jpg",
-  email: "example@gmail.com",
-  location: "Asia/Jakarta", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
-  languages: ["English", "Bahasa"], // optional: Leave the array empty if you don't want to display languages
+  email: "oscargarcia.og@proton.me",
+  location: "Europe/Paris", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
+  languages: ["Français", "Anglais"], // optional: Leave the array empty if you don't want to display languages
 };
 
 const newsletter: Newsletter = {
-  display: true,
+  display: false,
   title: <>Subscribe to {person.firstName}'s Newsletter</>,
   description: <>My weekly newsletter about creativity and engineering</>,
 };
@@ -23,27 +23,21 @@ const social: Social = [
   // Import new icons in /once-ui/icons.ts
   // Set essentials: true for links you want to show on the about page
   {
+    name: "CV",
+    icon: "document",
+    link: "/cv",
+    essential: true,
+  },
+  {
     name: "GitHub",
     icon: "github",
-    link: "https://github.com/once-ui-system",
+    link: "https://github.com/PabloHavane",
     essential: true,
   },
   {
     name: "LinkedIn",
     icon: "linkedin",
-    link: "https://www.linkedin.com/company/once-ui/",
-    essential: true,
-  },
-  {
-    name: "Instagram",
-    icon: "instagram",
-    link: "https://www.instagram.com/once_ui/",
-    essential: false,
-  },
-  {
-    name: "Threads",
-    icon: "threads",
-    link: "https://www.threads.com/@once_ui",
+    link: "https://www.linkedin.com/in/oscargarcia-dev/",
     essential: true,
   },
   {
@@ -59,33 +53,33 @@ const home: Home = {
   image: "/images/og/home.jpg",
   label: "Home",
   title: `${person.name}'s Portfolio`,
-  description: `Portfolio website showcasing my work as a ${person.role}`,
-  headline: <>Building bridges between design and code</>,
+  description: `Portfolio montrant mon travail en tant que ${person.role}`,
+  headline: <>Bonjour,</>,
   featured: {
     display: true,
     title: (
       <Row gap="12" vertical="center">
-        <strong className="ml-4">Once UI</strong>{" "}
+        <strong className="ml-4">Mon CV</strong>{" "}
         <Line background="brand-alpha-strong" vert height="20" />
         <Text marginRight="4" onBackground="brand-medium">
-          Featured work
+          (cliquez ici pour le télécharger)
         </Text>
       </Row>
     ),
-    href: "/work/building-once-ui-a-customizable-design-system",
+    href: "/cv",
   },
   subline: (
     <>
-    I'm Selene, a design engineer at <Text as="span" size="xl" weight="strong">ONCE UI</Text>, where I craft intuitive <br /> user experiences. After hours, I build my own projects.
+    Je m'appelle Oscar, je suis alternant développeur web / Devops chez <Text as="span" size="xl" weight="strong">VIASANTE Mutuelle</Text>. Et ceci est mon portfolio.
 </>
   ),
 };
 
 const about: About = {
   path: "/about",
-  label: "About",
-  title: `About – ${person.name}`,
-  description: `Meet ${person.name}, ${person.role} from ${person.location}`,
+  label: "A propos",
+  title: `A propos – ${person.name}`,
+  description: `Rencontrez ${person.name}, ${person.role} de ${person.location}`,
   tableOfContent: {
     display: true,
     subItems: false,
@@ -94,7 +88,7 @@ const about: About = {
     display: true,
   },
   calendar: {
-    display: true,
+    display: false,
     link: "https://cal.com",
   },
   intro: {
@@ -102,53 +96,78 @@ const about: About = {
     title: "Introduction",
     description: (
       <>
-        Selene is a Jakarta-based design engineer with a passion for transforming complex challenges
-        into simple, elegant design solutions. Her work spans digital interfaces, interactive
-        experiences, and the convergence of design and technology.
+        Etudiant alternant en informatique âgé de 21 ans passionné par la programmation web, le DevOps et la cybersécurité. 
+        <br />
+        Actuellement en 3e année de BUT Informatique à l'IUT Paul Sabatier de Toulouse, je suis à la recherche d'une alternance en cybersécurité ou DevSecOps pour continuer mes études en école d'ingénieur.
       </>
     ),
   },
   work: {
     display: true, // set to false to hide this section
-    title: "Work Experience",
+    title: "Experience",
     experiences: [
       {
-        company: "FLY",
-        timeframe: "2022 - Present",
-        role: "Senior Design Engineer",
+        company: "VIASANTE Mutuelle",
+        timeframe: "Aout 2025 - Présent",
+        role: "Alternant Développeur / DevOps",
         achievements: [
           <>
-            Redesigned the UI/UX for the FLY platform, resulting in a 20% increase in user
-            engagement and 30% faster load times.
+            Conteneurisation et industrialisation des développements et des déploiements de l’équipe grâce au DevOps.
           </>,
           <>
-            Spearheaded the integration of AI tools into design workflows, enabling designers to
-            iterate 50% faster.
+            Déploiement de l'application interne d’archivage développée lors de mon stage.
+          </>,
+          <>
+            Participation au RUN et au traitement de tickets GLPI.
+          </>,
+          <>
+            Développement d’évolutions sur les applications internes.
           </>,
         ],
-        images: [
-          // optional: leave the array empty if you don't want to display images
-          {
-            src: "/images/projects/project-01/cover-01.jpg",
-            alt: "Once UI Project",
-            width: 16,
-            height: 9,
-          },
-        ],
+        images: [],
       },
       {
-        company: "Creativ3",
-        timeframe: "2018 - 2022",
-        role: "Lead Designer",
+        company: "VIASANTE Mutuelle",
+        timeframe: "Avril 2025 - Juin 2025",
+        role: "Stagiaire Développeur Web / DevOps",
         achievements: [
           <>
-            Developed a design system that unified the brand across multiple platforms, improving
-            design consistency by 40%.
+            Développement d’une application web full-stack interne pour le suivi d’archivage de documents contenant des données personnelles.
           </>,
           <>
-            Led a cross-functional team to launch a new product line, contributing to a 15% increase
-            in overall company revenue.
+            Conteneurisation de l’application pour préparer au déploiement futur.
           </>,
+        ],
+        images: [],
+      },
+      {
+        company: "E. Leclerc Saint-Orens",
+        timeframe: "Avril 2024 - Juillet 2025",
+        role: "Job étudiant - Employé Polyvalent",
+        achievements: [
+          <>
+            Samedi : Mise en rayon au rayon Fruits et Légumes
+          </>,
+          <>
+            Dimanche : Vendeur et Conseiller au rayon Multimédia en autonomie
+          </>,
+        ],
+        images: [],
+      },
+      {
+        company: "BDE ATIDUT",
+        timeframe: "Mars 2023 - Mars 2024",
+        role: "Président du Bureau des Étudiants",
+        achievements: [
+          <>
+            Gestion/Pilotage de l’association et de la vie étudiante sur le campus
+          </>,
+          <>
+            Organisation d’événements (soirées, voyages, activités sportives, culturelles, etc.) pour les étudiants.
+          </>,
+          <>
+            Encadrement et gestion d’équipe lors du Week-End d’Intégration Inter-IUT (850 participants)
+          </>
         ],
         images: [],
       },
@@ -156,80 +175,281 @@ const about: About = {
   },
   studies: {
     display: true, // set to false to hide this section
-    title: "Studies",
+    title: "Formation",
     institutions: [
       {
-        name: "University of Jakarta",
-        description: <>Studied software engineering.</>,
+        name: "BUT Informatique",
+        description: <>En 3e année à l'IUT Paul Sabatier (Toulouse, 31), parcours Déploiement d’Applications Communicantes et Sécurisées</>,
       },
       {
-        name: "Build the Future",
-        description: <>Studied online marketing and personal branding.</>,
+        name: "Baccalauréat Général",
+        description: <>Physique/Science de l’ingénieur option Mathématiques complémentaires, mention Bien - Parcours Espace - Lycée Pierre Paul Riquet, St-Orens de Gameville 31</>,
       },
     ],
   },
   technical: {
     display: true, // set to false to hide this section
-    title: "Technical skills",
+    title: "Compétences",
     skills: [
-      {
-        title: "Figma",
+      { // Réaliser
+        title: "Réaliser",
         description: (
-          <>Able to prototype in Figma with Once UI with unnatural speed.</>
+          <>Conception et développement de solutions techniques robustes et adaptées aux besoins métiers.</>
         ),
         tags: [
           {
-            name: "Figma",
-            icon: "figma",
+            name: "HTML/CSS/JavaScript",
           },
+          {
+            name: "PHP",
+          },
+          {
+            name: "Java",
+          },
+          {
+            name: "Python",
+          },
+          {
+            name: "C",
+          }
         ],
         // optional: leave the array empty if you don't want to display images
         images: [
           {
-            src: "/images/projects/project-01/cover-02.jpg",
+            src: "/images/projects/aeon.jpg",
             alt: "Project image",
             width: 16,
             height: 9,
           },
           {
-            src: "/images/projects/project-01/cover-03.jpg",
+            src: "/images/projects/cpn2.png",
+            alt: "Project image",
+            width: 16,
+            height: 9,
+          },
+          {
+            src: "/images/projects/fromage.jpg",
             alt: "Project image",
             width: 16,
             height: 9,
           },
         ],
       },
-      {
-        title: "Next.js",
+      { // Optimiser
+        title: "Optimiser",
         description: (
-          <>Building next gen apps with Next.js + Once UI + Supabase.</>
+          <>Proposer des applications informatiques optimisées et efficaces.</>
         ),
         tags: [
           {
-            name: "JavaScript",
-            icon: "javascript",
+            name: "Programmation Orientée Objet",
           },
           {
-            name: "Next.js",
-            icon: "nextjs",
+            name: "Design Patterns",
           },
           {
-            name: "Supabase",
-            icon: "supabase",
+            name: "Tests"
+          },
+          {
+            name: "Modélisation UML"
+          }
+        ],
+        // optional: leave the array empty if you don't want to display images
+        images: [
+          {
+            src: "/images/projects/fromage.jpg",
+            alt: "Project image",
+            width: 16,
+            height: 9,
+          },
+          {
+            src: "/images/projects/hacker.png",
+            alt: "Project image",
+            width: 16,
+            height: 9,
+          }
+        ],
+      },
+      { // Adminisrer
+        title: "Adminisrer",
+        description: (
+          <>Gestion, maintenance et optimisation des infrastructures systèmes et réseaux.</>
+        ),
+        tags: [
+          {
+            name: "Docker",
+          },
+          {
+            name: "Kubernetes",
+          },
+          {
+            name: "Ansible",
+          },
+          {
+            name: "CI/CD",
+          },
+          {
+            name: "Linux",
+          }
+        ],
+        // optional: leave the array empty if you don't want to display images
+        images: [
+          {
+            src: "/images/projects/aeon.jpg",
+            alt: "Project image",
+            width: 16,
+            height: 9,
+          },
+          {
+            src: "/images/projects/cpn2.png",
+            alt: "Project image",
+            width: 16,
+            height: 9,
+          }
+        ],
+      },
+      { // Gérer
+        title: "Gérer",
+        description: (
+          <>Administrer et exploiter les données de l'entreprise pour permettre un bon pilotage de l'entreprise.</>
+        ),
+        tags: [
+          {
+            name: "SQL",
+            icon: "database",
+          },
+          { 
+            name: "MCD/MLD",
+            icon: "relation",
           },
         ],
         // optional: leave the array empty if you don't want to display images
         images: [
           {
-            src: "/images/projects/project-01/cover-04.jpg",
+            src: "/images/projects/aeon.jpg",
             alt: "Project image",
             width: 16,
             height: 9,
           },
+          {
+            src: "/images/projects/cpn2.png",
+            alt: "Project image",
+            width: 16,
+            height: 9,
+          }
+        ],
+      },
+      { // Conduire
+        title: "Conduire",
+        description: (
+          <>Piloter un projet informatique avec des méthodes classiques ou agiles.</>
+        ),
+        tags: [
+          {
+            name: "Agile SCRUM",
+            icon: "agile",
+          },
+          {
+            name: "Kanban",
+            icon: "kanban",
+          },
+          {
+            name: "Suite Office",
+            icon: "office",
+          },
+        ],
+        // optional: leave the array empty if you don't want to display images
+        images: [
+          {
+            src: "/images/projects/aeon.jpg",
+            alt: "Project image",
+            width: 16,
+            height: 9,
+          },
+          {
+            src: "/images/projects/cpn2.png",
+            alt: "Project image",
+            width: 16,
+            height: 9,
+          },
+          {
+            src: "/images/projects/fromage.jpg",
+            alt: "Project image",
+            width: 16,
+            height: 9,
+          },
+          {
+            src: "/images/projects/hacker.png",
+            alt: "Project image",
+            width: 16,
+            height: 9,
+          }
+        ],
+      },
+      { // Collaborer
+        title: "Collaborer",
+        description: (
+          <>Travailler efficacement dans une équipe informatique.</>
+        ),
+        tags: [
+          {
+            name: "Git",
+          },
+          {
+            name: "Suite Office",
+          },
+        ],
+        // optional: leave the array empty if you don't want to display images
+        images: [
+          {
+            src: "/images/projects/cpn2.png",
+            alt: "Project image",
+            width: 16,
+            height: 9,
+          },
+          {
+            src: "/images/projects/hacker.png",
+            alt: "Project image",
+            width: 16,
+            height: 9,
+          }
         ],
       },
     ],
   },
+  hobbies: {
+    display: true,
+    title: "Hobbies",
+    list: [
+      {
+        name: "Cybersécurité",
+        description: <>
+          <strong>- Formation autodidacte</strong> sur la cybersécurité grâce à des plateformes comme TryHackMe (Top 10%) et HackTheBox.
+          <br />
+          <br />
+          <strong>- Certificat "Junior Penetration Tester"</strong> obtenu sur TryHackMe : <a href="https://tryhackme-certificates.s3-eu-west-1.amazonaws.com/THM-QOHUZIZZBM.pdf" target="_blank" rel="noopener noreferrer">Voir le certificat</a>
+          <br />
+          <br />
+          <strong>- Acquisition en cours</strong> du certificat SOC Analyst L1 sur TryHackMe.
+        </>,
+      },
+      {
+        name: "Sport",
+        description: <>
+          <strong>- Boxe française (Savate) :</strong> Pratiquant depuis 5 ans, j'apprécie la discipline et la rigueur que ce sport m'apporte.
+          <br />
+          <br />
+          <strong>- Surf :</strong> Passionné par le surf depuis mon enfance, j'essaie de profiter de chaque occasion pour pratiquer ce sport dès que je suis près de l'océan. Je surfe principalement dans les Landes à Hossegor, et sur la côte basque.
+          <br />
+          <br />
+          <strong>- Roller (loisir) :</strong> Pratiquant depuis 2 ans à l'université, cela m'a permis de reprendre doucement cette discipline que j'avais pratiquée avant de commencer mes études supérieurs.
+          <br />
+          <br />
+          <strong>- Roller hockey (compétition) :</strong> J'ai pratiqué ce sport en club pendant 10 ans à un niveau compétitif avant de me concentrer sur mes études en entrant dans le supérieur. J'ai également été arbitre officiel de la Fédération Française de Roller et Skateboard (FFRS) pendant 5 ans.
+        </>,
+      },
+    ],
+  },  
 };
 
 const blog: Blog = {
@@ -243,9 +463,9 @@ const blog: Blog = {
 
 const work: Work = {
   path: "/work",
-  label: "Work",
-  title: `Projects – ${person.name}`,
-  description: `Design and dev projects by ${person.name}`,
+  label: "Expériences",
+  title: `Projets – ${person.name}`,
+  description: `Projets de développement par ${person.name}`,
   // Create new project pages by adding a new .mdx file to app/blog/posts
   // All projects will be listed on the /home and /work routes
 };
@@ -301,4 +521,12 @@ const gallery: Gallery = {
   ],
 };
 
-export { person, social, newsletter, home, about, blog, work, gallery };
+const cv : CV = {
+  path: "/cv",
+  label: "CV",
+  title: `CV – ${person.name}`,
+  description: `Curriculum Vitae de ${person.name}`,
+  filePath: "/cv-oscar-garcia.pdf",
+};
+
+export { person, social, newsletter, home, about, blog, work, gallery, cv };

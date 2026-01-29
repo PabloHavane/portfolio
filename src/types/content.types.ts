@@ -209,6 +209,19 @@ export interface About extends BasePageConfig {
       }>;
     }>;
   };
+  hobbies: {
+    /** Whether to display hobbies section */
+    display: boolean;
+    /** Title for the hobbies section */
+    title: string;
+    /** List of hobbies */
+    list: Array<{
+      /** Hobby name */
+      name: string;
+      /** Hobby description */
+      description?: React.ReactNode;
+    }>;
+  };
 }
 
 /**
@@ -237,4 +250,13 @@ export interface Gallery extends BasePageConfig {
     /** Image orientation (horizontal/vertical) */
     orientation: string;
   }>;
+}
+
+/** 
+ * CV page configuration.
+ * @description Configuration for the CV page, including metadata and path to the CV file.
+ */
+export interface CV extends BasePageConfig {
+  /** Path to the CV file */
+  filePath: `/${string}` | string;
 }
